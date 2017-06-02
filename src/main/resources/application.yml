@@ -25,6 +25,12 @@ app:
 ---
 spring:
   profiles: local
+  datasource:
+    url: jdbc:mysql://localhost/petstore-inventory
+    username: root
+    password: root
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa.hibernate.ddl-auto: update
 eureka:
   client:
     serviceUrl:
@@ -34,7 +40,14 @@ eureka:
 ---
 spring:
   profiles: dev
+  datasource:
+    url: jdbc:mysql://10.202.128.102/petstore-inventory
+    username: root
+    password: root
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa.hibernate.ddl-auto: update
 eureka:
   client:
     serviceUrl:
       defaultZone: http://10.202.128.102:8761/eureka/
+

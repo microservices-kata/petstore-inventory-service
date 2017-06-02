@@ -2,6 +2,7 @@ package com.thoughtworks.petstore.inventory.controller
 
 import com.google.common.collect.ImmutableMap
 import groovy.transform.CompileStatic
+import io.swagger.annotations.ApiOperation
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,8 +17,9 @@ class AppController {
     @Value("\${app.lang}")
     String lang
 
-    @ResponseBody
+    @ApiOperation(value = "Show programing language")
     @GetMapping(path = "/lang")
+    @ResponseBody
     public Map getLanguage() {
         return ImmutableMap.of("language", lang)
     }
