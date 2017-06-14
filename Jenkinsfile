@@ -12,7 +12,7 @@ node {
     }
     docker.image("${gradleImage}").inside("-v ${gradleFolder}:/root/.gradle") {
         stage('构建代码') {
-            sh 'gradle build'
+            sh 'gradle clean build'
         }
     //    stage('验证契约') {
     //        sh "export PACT_BROKER_URL=\"http://${devHost}:2000\"; gradle pactVerify"
