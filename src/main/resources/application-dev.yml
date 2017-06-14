@@ -1,0 +1,14 @@
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://10.202.129.46/petstore-inventory
+    username: root
+    password: root
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa.hibernate.ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.202.129.46:8761/eureka/
+
