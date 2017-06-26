@@ -16,11 +16,14 @@ class AppController {
 
     @Value("\${app.lang}")
     String lang
+    @Value("\${spring.profiles}")
+    String env
 
     @ApiOperation(value = "Show programing language")
-    @GetMapping(path = "/lang")
+    @GetMapping(path = "/info")
     @ResponseBody
     public Map getLanguage() {
-        return ImmutableMap.of("language", lang)
+        return ImmutableMap.of("language", lang,
+                "environment", env)
     }
 }
